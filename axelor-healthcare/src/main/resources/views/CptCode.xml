@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_7.0.xsd">
+
+  <grid name="patient-cpt-code-grid" title="CPT Code"
+    model="com.axelor.apps.healthcare.db.CptCode">
+    <field name="name"/>
+    <field name="code"/>
+  </grid>
+
+  <form name="patient-cpt-code-form" title="CPT Code"
+    model="com.axelor.apps.healthcare.db.CptCode" width="large">
+    <panel name="mainPanel">
+      <field name="name"/>
+      <field name="code"/>
+    </panel>
+
+  </form>
+</object-views>

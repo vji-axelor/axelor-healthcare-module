@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_7.0.xsd">
+
+  <module name="healthcare" package="com.axelor.apps.healthcare.db"/>
+
+  <entity name="HealthcarePractitioner">
+
+    <many-to-one name="picture" ref="com.axelor.meta.db.MetaFile" title="Photo"
+      index="false"/>
+    <string name="preferredPronoun" title="Preferred Pronoun"
+      selection="healthcare-patient-select-preferred-pronoun"/>
+    <string name="firstName" title="First name" namecolumn="true"/>
+    <string name="middleName" title="Middle Name"/>
+    <string name="lastName" title="Last Name"/>
+    <string name="fullName" title="Full Name"/>
+    <date name="dateOfBirth" title="Date Of Birth"/>
+
+    <string name="mobile" title="Mobile"/>
+    <string name="phone" title="Phone"/>
+    <string name="email" title="Email"/>
+
+    <integer name="statusSelect" title="Status" selection="healthcare-patient-status-select"/>
+
+    <string name="designation" title="Designation"/>
+    <string name="specialty" title="Specialty"/>
+    <string name="license" title="License"/>
+    <string name="practitionerNumber" title="practitioner Number"/>
+
+    <!-- Address/Contact -->
+
+    <one-to-many name="practitionerAddress" title="Practitioner Address"
+      ref="com.axelor.apps.healthcare.db.PatientAddress" mappedBy="healthcarePractitioner"/>
+
+    <one-to-many name="patientAppointmentInfo" title="Patient Appointment Info"
+      ref="com.axelor.apps.healthcare.db.PatientAppointment" mappedBy="healthcarePractitioner"/>
+
+    <many-to-one name="userAssignTo" ref="com.axelor.auth.db.User" title="User Assign"
+      index="false" massUpdate="true"/>
+  </entity>
+
+</domain-models>

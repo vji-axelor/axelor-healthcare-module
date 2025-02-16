@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_7.0.xsd">
+
+  <module name="healthcare" package="com.axelor.apps.healthcare.db"/>
+
+  <entity name="ProviderInformation">
+
+    <string name="npiNumber" title="NPI Number" namecolumn="true"/>
+    <string name="providerName" title="Provider Name"/>
+    <string name="licenseNumber" title="License Number"/>
+    <string name="officeAddress" title="Office Address"/>
+    <string name="officePhoneNumber" title="Office Phone Number"/>
+    <string name="taxID" title="Tax ID"/>
+
+    <many-to-one ref="com.axelor.apps.healthcare.db.Patient" name="patient"
+      title="patient"/>
+  </entity>
+
+</domain-models>

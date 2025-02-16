@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_7.0.xsd">
+
+  <grid name="patient-insurance-information-grid" title="Insurance Information"
+    model="com.axelor.apps.healthcare.db.InsuranceInformation">
+    <field name="policyNumber"/>
+    <field name="insuranceCompanyName"/>
+    <field name="groupNumber"/>
+    <field name="policyholderName"/>
+    <field name="policyholderBirthDate"/>
+    <field name="effectiveDate"/>
+    <field name="insuranceType"/>
+    <field name="insuranceAddress"/>
+    <field name="insurancePhoneNumber"/>
+  </grid>
+
+  <form name="patient-insurance-information-form" title="Insurance Information"
+    model="com.axelor.apps.healthcare.db.InsuranceInformation" width="large">
+    <panel name="mainPanel">
+      <field name="policyNumber"/>
+      <field name="insuranceCompanyName"/>
+      <field name="groupNumber"/>
+      <field name="policyholderName"/>
+      <field name="policyholderBirthDate"/>
+      <field name="effectiveDate"/>
+      <field name="insuranceType"/>
+      <field name="insuranceAddress"/>
+      <field name="insurancePhoneNumber"/>
+    </panel>
+
+  </form>
+</object-views>

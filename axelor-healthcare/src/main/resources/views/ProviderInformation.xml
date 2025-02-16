@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_7.0.xsd">
+
+  <grid name="patient-provider-information-grid" title="Provider Information"
+    model="com.axelor.apps.healthcare.db.ProviderInformation">
+    <field name="npiNumber"/>
+    <field name="providerName"/>
+    <field name="licenseNumber"/>
+    <field name="officeAddress"/>
+    <field name="officePhoneNumber"/>
+    <field name="taxID"/>
+  </grid>
+
+  <form name="patient-provider-information-form" title="Provider Information"
+    model="com.axelor.apps.healthcare.db.ProviderInformation" width="large">
+    <panel name="mainPanel">
+      <field name="npiNumber"/>
+      <field name="providerName"/>
+      <field name="licenseNumber"/>
+      <field name="officeAddress"/>
+      <field name="officePhoneNumber"/>
+      <field name="taxID"/>
+    </panel>
+
+  </form>
+</object-views>

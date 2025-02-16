@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_7.2.xsd">
+
+  <selection name="healthcare-patient-status-select">
+    <option value="1">Active</option>
+    <option value="2">Inactive</option>
+    <option value="3">Patient</option>
+    <option value="4">NonPatient</option>
+    <option value="5">Archived</option>
+    <option value="6">Deceased</option>
+  </selection>
+
+  <selection name="healthcare-patient-report-preference">
+    <option value="1">Email</option>
+    <option value="2">Print</option>
+  </selection>
+
+  <selection name="healthcare-patient-select-gender">
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+    <option value="Transgender Male">Transgender Male</option>
+    <option value="Transgender Female">Transgender Female</option>
+    <option value="Genderqueer">Genderqueer</option>
+    <option value="Other">Other</option>
+  </selection>
+
+  <selection name="healthcare-patient-select-blood-group">
+    <option value="1">A Positive</option>
+    <option value="2">A Negative</option>
+    <option value="3">AB Positive</option>
+    <option value="4">AB Negative</option>
+    <option value="5">B Positive</option>
+    <option value="6">B Negative</option>
+    <option value="7">O Positive</option>
+    <option value="8">O Negative</option>
+  </selection>
+
+  <selection name="healthcare-patient-select-preferred-pronoun">
+    <option value="Mr.">Mr.</option>
+    <option value="Ms.">Ms.</option>
+    <option value="Prof.">Prof.</option>
+    <option value="Dr.">Dr.</option>
+  </selection>
+
+  <selection name="healthcare-patient-select-birth-sex">
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+  </selection>
+
+  <selection name="healthcare-patient-select-credit-type">
+    <option value="Visa">Visa</option>
+    <option value="Mastercard">Mastercard</option>
+    <option value="American Express">American Express</option>
+    <option value="Discover">Discover</option>
+  </selection>
+
+  <selection name="healthcare-patient-select-billing-type">
+    <option value="Cash">Cash</option>
+    <option value="Credit">Credit</option>
+    <option value="Installment Loan">Installment Loan</option>
+  </selection>
+
+  <selection name="healthcare-patient-select-job-title">
+    <option value="Non student">Non student</option>
+    <option value="Full time">Full time</option>
+    <option value="Part time">Part time</option>
+  </selection>
+
+  <selection name="healthcare-patient-select-patient-relation">
+    <option value="Father">Father</option>
+    <option value="Mother">Mother</option>
+    <option value="Spouse">Spouse</option>
+    <option value="Siblings">Siblings</option>
+    <option value="Family">Family</option>
+    <option value="Friend">Friend</option>
+    <option value="Other">Other</option>
+  </selection>
+
+  <selection name="healthcare-patient-select-marital-status">
+    <option value="Single">Single</option>
+    <option value="Married">Married</option>
+    <option value="Divorced">Divorced</option>
+    <option value="Widow">Widow</option>
+  </selection>
+
+  <selection name="healthcare-patient-insurance-type-select">
+    <option value="Primary">Primary</option>
+    <option value="Secondary">Secondary</option>
+  </selection>
+
+  <selection name="healthcare-patient-billing-info-status">
+    <option value="Pending">Pending</option>
+    <option value="Partial Payment">Partial Payment</option>
+    <option value="Paid">Paid</option>
+    <option value="Overdue">Overdue</option>
+  </selection>
+
+</object-views>

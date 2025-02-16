@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_7.2.xsd">
+
+  <menuitem name="healthcare-root" title="Healthcare" order="900" icon="fa-hospital"/>
+
+  <menuitem name="healthcare-patient" parent="healthcare-root" title="Patient"
+    action="action.healthcare.patient" order="100"/>
+
+  <action-view name="action.healthcare.patient" title="Patient"
+    model="com.axelor.apps.healthcare.db.Patient">
+    <view type="grid" name="patient-grid"/>
+    <view type="form" name="patient-form"/>
+  </action-view>
+
+  <menuitem name="healthcare-practitioner-patient" parent="healthcare-root"
+    title="Healthcare Practitioner" action="action.healthcare.practitioner.patient" order="110"/>
+
+  <action-view name="action.healthcare.practitioner.patient"
+    title="Healthcare Practitioner" model="com.axelor.apps.healthcare.db.HealthcarePractitioner">
+    <view type="grid" name="healthcare-practitioner-grid"/>
+    <view type="form" name="healthcare-practitioner-form"/>
+  </action-view>
+  
+  <menuitem name="healthcare-patient-appointment-menu" parent="healthcare-root"
+    title="Patient Appointment" action="action.patient.appointment.view" order="110"/>
+
+  <action-view name="action.patient.appointment.view"
+    title="Patient Appointment" model="com.axelor.apps.healthcare.db.PatientAppointment">
+    <view type="grid" name="patient-appointment-grid"/>
+    <view type="form" name="patient-appointment-form"/>
+  </action-view>
+  
+  <menuitem name="healthcare-patient-billing-menu" parent="healthcare-root"
+    title="Billing" action="action.patient.billing.view" order="130"/>
+
+  <action-view name="action.patient.billing.view"
+    title="Billing" model="com.axelor.apps.healthcare.db.BillingInformation">
+    <view type="grid" name="patient-billing-information-grid"/>
+    <view type="form" name="patient-billing-information-form"/>
+  </action-view>
+
+
+
+  <menuitem name="healthcare-patient-home" parent="healthcare-root" title="Patient Home"
+    action="wizard-healthcare-home-view" order="500"/>
+
+
+</object-views>

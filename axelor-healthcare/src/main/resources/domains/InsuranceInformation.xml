@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_7.0.xsd">
+
+  <module name="healthcare" package="com.axelor.apps.healthcare.db"/>
+
+  <entity name="InsuranceInformation">
+
+    <string name="policyNumber" title="Policy Number" namecolumn="true"/>
+    <string name="insuranceCompanyName" title="Insurance Company Name"/>
+    <string name="groupNumber" title="Group Number"/>
+    <string name="policyholderName" title="Policyholder Name"/>
+    <string name="policyholderBirthDate" title="Policyholder Date of Birth"/>
+    <string name="insuranceType" title="Insurance Type"
+      selection="healthcare-patient-insurance-type-select"/>
+    <string name="insuranceAddress" title="Insurance Address"/>
+    <string name="insurancePhoneNumber" title="Insurance Phone Number"/>
+    <string name="effectiveDate" title="Effective Date"/>
+
+    <many-to-one ref="com.axelor.apps.healthcare.db.Patient" name="patient"
+      title="patient"/>
+  </entity>
+
+</domain-models>

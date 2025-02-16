@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_7.0.xsd">
+
+  <grid name="patient-billing-information-grid" title="Billing Information"
+    model="com.axelor.apps.healthcare.db.BillingInformation">
+    <field name="billingReference"/>
+    <field name="serviceDate"/>
+    <field name="billingDate"/>
+    <field name="paymentDueDate"/>
+    <field name="billingStatus"/>
+    <field name="totalAmountBilled"/>
+    <field name="patient" readonly="true"/>
+  </grid>
+
+  <form name="patient-billing-information-form" title="Billing Information"
+    model="com.axelor.apps.healthcare.db.BillingInformation" width="large">
+    <panel name="mainPanel">
+      <field name="billingReference"/>
+      <field name="serviceDate"/>
+      <field name="billingDate"/>
+      <field name="paymentDueDate"/>
+      <field name="billingStatus"/>
+      <spacer/>
+      <field name="totalAmountBilled"/>
+      <field name="amountPaidByInsurance"/>
+      <field name="amountPaidByPatient"/>
+      <field name="amountDueByPatient"/>
+    </panel>
+
+    <panel-related field="procedureDetails" title="Procedure Details"
+      grid-view="patient-procedure-details-grid" form-view="patient-procedure-details-form"/>
+      
+    <panel sidebar="true">
+      <field name="patient" readonly="true"/>
+    </panel>
+  </form>
+</object-views>

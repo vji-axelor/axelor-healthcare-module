@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_7.0.xsd">
+
+  <module name="healthcare" package="com.axelor.apps.healthcare.db"/>
+
+  <entity name="ProcedureDetails">
+    <string name="procedureDescription" title="ProcedureDescription" namecolumn="true"/>
+    <string name="officePhoneNumber" title="Office Phone Number"/>
+    <many-to-one ref="com.axelor.apps.healthcare.db.CptCode" name="procedureCode"
+      title="Procedure Code"/>
+    <many-to-one ref="com.axelor.apps.healthcare.db.IcdCode" name="diagnosisCode"
+      title="Diagnosis Code"/>
+    <integer name="toothNumber" title="Tooth Number"/>
+    <string name="toothSurface" title="Tooth Surface"/>
+    <string name="quadrant" title="Quadrant"/>
+    <decimal name="procedureFee" title="Procedure Fee"/>
+    <decimal name="quantityProcedures" title="Quantity Procedures"/>
+
+    <many-to-one ref="com.axelor.apps.healthcare.db.BillingInformation"
+      name="billingInformation" title="Billing Information"/>
+  </entity>
+
+</domain-models>

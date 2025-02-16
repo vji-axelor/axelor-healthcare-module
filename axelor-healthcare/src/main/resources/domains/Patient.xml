@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_7.0.xsd">
+
+  <module name="healthcare" package="com.axelor.apps.healthcare.db"/>
+
+  <entity name="Patient">
+
+    <many-to-one name="picture" ref="com.axelor.meta.db.MetaFile" title="Photo"
+      index="false"/>
+    <string name="preferredPronoun" title="Preferred Pronoun"
+      selection="healthcare-patient-select-preferred-pronoun"/>
+    <string name="firstName" title="First name" namecolumn="true"/>
+    <string name="middleName" title="Middle Name"/>
+    <string name="lastName" title="Last Name"/>
+    <string name="fullName" title="Full Name"/>
+    <date name="dateOfBirth" title="Date Of Birth"/>
+
+    <string name="mobile" title="Mobile"/>
+    <string name="phone" title="Phone"/>
+    <string name="email" title="Email"/>
+
+    <integer name="statusSelect" title="Status" selection="healthcare-patient-status-select"/>
+    <string name="identificationNumber" title="Identification Number (UID)"/>
+    <string name="socialSecurityNumber" title="Social Security Number"/>
+    <string name="chartNumber" title="Chart Number"/>
+
+    <string name="jobTitle" title="Job Title" selection="healthcare-patient-select-job-title"/>
+    <string name="employer" title="Employer"/>
+    <string name="creditType" title="Credit Type"
+      selection="healthcare-patient-select-credit-type"/>
+    <string name="billingType" title="Billing Type"
+      selection="healthcare-patient-select-billing-type"/>
+
+
+    <string name="birthSex" title="Birth Sex" selection="healthcare-patient-select-birth-sex"/>
+    <string name="genderIdenty" title="Gender Identy"
+      selection="healthcare-patient-select-gender"/>
+    <integer name="bloodGroup" title="Blood Group"
+      selection="healthcare-patient-select-blood-group"/>
+    <string name="referralReason" title="Referral Reason"/>
+
+    <many-to-one ref="com.axelor.apps.healthcare.db.IcdCode" name="icdCode"
+      title="ICD Code"/>
+    <many-to-one ref="com.axelor.apps.healthcare.db.CptCode" name="cptCode"
+      title="CPT Code"/>
+    <boolean name="isSameForEntireFamily" title="Same for entire Family?"/>
+    <string name="notes" title="Notes"/>
+
+    <integer name="reportPreference" title="Report Preference"
+      selection="healthcare-patient-report-preference"/>
+
+
+    <string name="patientDetails" title="Patient Details" large="true"/>
+
+    <one-to-many name="patientAppointmentInfo" title="Patient Appointment Info"
+      ref="com.axelor.apps.healthcare.db.PatientAppointment" mappedBy="patient"/>
+
+    <!-- Address/Contact -->
+
+    <one-to-many name="patientAddress" title="Patient Address"
+      ref="com.axelor.apps.healthcare.db.PatientAddress" mappedBy="patient"/>
+
+
+    <one-to-many name="patientRelation" title="Patient Relation"
+      ref="com.axelor.apps.healthcare.db.PatientRelation" mappedBy="patient"/>
+
+
+    <!-- Medical History Tab -->
+
+    <!-- Personal and Social History -->
+    <string name="occupation" title="Occupation"/>
+    <string name="maritalStatus" title="Marital Status"
+      selection="healthcare-patient-select-marital-status"/>
+
+    <!-- Personal and Social History -->
+    <string name="allergies" title="Allergies"/>
+    <string name="medicalHistory" title="Medical History"/>
+    <string name="medication" title="Medication"/>
+    <string name="surgicalHistory" title="Surgical History"/>
+
+    <!-- Risk Factors -->
+    <string name="tobaccoConsumptionPast" title="Tobacco Consumption (Past)"/>
+    <string name="tobaccoConsumptionPresent" title="Tobacco Consumption (Present)"/>
+    <string name="alcoholConsumptionPast" title="Alcohol Consumption (Past)"/>
+    <string name="alcoholConsumptionPresent" title="Alcohol Consumption (Present)"/>
+    <string name="occupationalHazardAndEnvironmentalFactors"
+      title="Occupational Hazards and Environmental Factors"/>
+    <string name="otherRiskFactors" title="Other Risk Factors"/>
+
+    <!-- Insurance/Billing -->
+
+    <one-to-many name="insuranceInformation" title="Insurance Information"
+      ref="com.axelor.apps.healthcare.db.InsuranceInformation" mappedBy="patient"/>
+
+    <one-to-many name="providerInformation" title="Provider Information"
+      ref="com.axelor.apps.healthcare.db.ProviderInformation" mappedBy="patient"/>
+
+    <one-to-many name="billingInformation" title="Billing Information"
+      ref="com.axelor.apps.healthcare.db.BillingInformation" mappedBy="patient"/>
+
+    <many-to-one ref="com.axelor.apps.healthcare.db.HealthcarePractitioner"
+      name="healthcarePractitioner" title="Healthcare Practitioner"/>
+
+    <many-to-one name="userAssignTo" ref="com.axelor.auth.db.User" title="User Assign"
+      index="false" massUpdate="true"/>
+
+  </entity>
+
+</domain-models>

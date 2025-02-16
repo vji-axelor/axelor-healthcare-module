@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_7.0.xsd">
+
+  <module name="healthcare" package="com.axelor.apps.healthcare.db"/>
+
+  <entity name="PatientAddress">
+    <boolean name="isDefaultAddress" title="Is DefaultAddress?"/>
+    <many-to-one ref="com.axelor.apps.base.db.Address" name="patientAddress"
+      title="Address"/>
+
+    <many-to-one ref="com.axelor.apps.healthcare.db.Patient" name="patient"
+      title="patient"/>
+
+    <many-to-one ref="com.axelor.apps.healthcare.db.HealthcarePractitioner"
+      name="healthcarePractitioner" title="Healthcare Practitioner"/>
+
+  </entity>
+
+</domain-models>

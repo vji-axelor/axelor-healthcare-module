@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_7.0.xsd">
+
+  <grid name="patient-procedure-details-grid" title="Procedure Details"
+    model="com.axelor.apps.healthcare.db.ProcedureDetails">
+    <field name="procedureCode"/>
+    <field name="diagnosisCode"/>
+    <field name="toothNumber"/>
+    <field name="toothSurface"/>
+    <field name="quadrant"/>
+    <field name="procedureFee"/>
+    <field name="quantityProcedures"/>
+  </grid>
+
+  <form name="patient-procedure-details-form" title="Procedure Details"
+    model="com.axelor.apps.healthcare.db.ProcedureDetails" width="large">
+    <panel name="mainPanel">
+      <field name="procedureDescription"/>
+      <field name="officePhoneNumber"/>
+      <field name="procedureCode"/>
+      <field name="diagnosisCode"/>
+      <field name="toothNumber"/>
+      <field name="toothSurface"/>
+      <field name="quadrant"/>
+      <field name="procedureFee"/>
+      <field name="quantityProcedures"/>
+    </panel>
+
+  </form>
+</object-views>
