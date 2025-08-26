@@ -7,6 +7,8 @@
     model="com.axelor.apps.healthcare.db.PatientAppointment">
     <field name="reference"/>
     <field name="appointmentDate"/>
+    <field name="patient"/>
+    <field name="healthcarePractitioner"/>
   </grid>
 
   <form name="patient-appointment-form" title="Patient Appointment"
@@ -14,6 +16,8 @@
     <panel name="mainPanel">
       <field name="reference"/>
       <field name="appointmentDate"/>
+      <field name="patient"/>
+      <field name="healthcarePractitioner"/>
     </panel>
 
   </form>

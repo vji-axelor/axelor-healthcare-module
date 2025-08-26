@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_7.0.xsd">
+
+  <grid name="evc-evc-code-grid" title="EVC Code" model="com.axelor.apps.evc.db.EvcCode">
+    <field name="evcCode" title="Name"/>
+    <field name="codeTitle" title="Code Title"/>
+    <field name="codeDescription" title="Code Description"/>
+    <field name="procedureCategory" title="Procedure Category"/>
+    <field name="applicableSpecies" title="Applicable Species"/>
+    <field name="complexityLevel" title="complexityLevel"/>
+    <field name="codeVersion" title="Code Version"/>
+    <field name="revisionNumber" title="Revision Number"/>
+    <field name="effectiveDate" title="Effective Date"/>
+    <field name="expirationDate" title="Expiration Date"/>
+    <field name="approvalStatus" title="Approval Status"/>
+    <field name="requiresAnesthesia" title="Requires Anesthesia"/>
+  </grid>
+
+  <form name="evc-evc-code-form" title="EVC Code" model="com.axelor.apps.evc.db.EvcCode"
+    width="large">
+    <panel name="mainPanel">
+      <field name="evcCode" title="Name"/>
+      <field name="codeTitle" title="Code Title"/>
+      <field name="codeDescription" title="Code Description"/>
+      <field name="procedureCategory" title="Procedure Category"/>
+      <field name="applicableSpecies" title="Applicable Species"/>
+      <field name="complexityLevel" title="complexityLevel"/>
+      <field name="codeVersion" title="Code Version"/>
+      <field name="revisionNumber" title="Revision Number"/>
+      <field name="effectiveDate" title="Effective Date"/>
+      <field name="expirationDate" title="Expiration Date"/>
+      <field name="approvalStatus" title="Approval Status"/>
+      <field name="requiresAnesthesia" title="Requires Anesthesia"/>
+    </panel>
+
+  </form>
+</object-views>

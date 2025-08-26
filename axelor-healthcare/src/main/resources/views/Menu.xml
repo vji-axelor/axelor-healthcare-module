@@ -22,25 +22,49 @@
     <view type="grid" name="healthcare-practitioner-grid"/>
     <view type="form" name="healthcare-practitioner-form"/>
   </action-view>
-  
+
   <menuitem name="healthcare-patient-appointment-menu" parent="healthcare-root"
     title="Patient Appointment" action="action.patient.appointment.view" order="110"/>
 
-  <action-view name="action.patient.appointment.view"
-    title="Patient Appointment" model="com.axelor.apps.healthcare.db.PatientAppointment">
+  <action-view name="action.patient.appointment.view" title="Patient Appointment"
+    model="com.axelor.apps.healthcare.db.PatientAppointment">
     <view type="grid" name="patient-appointment-grid"/>
     <view type="form" name="patient-appointment-form"/>
   </action-view>
-  
-  <menuitem name="healthcare-patient-billing-menu" parent="healthcare-root"
-    title="Billing" action="action.patient.billing.view" order="130"/>
 
-  <action-view name="action.patient.billing.view"
-    title="Billing" model="com.axelor.apps.healthcare.db.BillingInformation">
+  <menuitem name="healthcare-patient-billing-menu" parent="healthcare-root" title="Billing"
+    action="action.patient.billing.view" order="130"/>
+
+  <action-view name="action.patient.billing.view" title="Billing"
+    model="com.axelor.apps.healthcare.db.BillingInformation">
     <view type="grid" name="patient-billing-information-grid"/>
     <view type="form" name="patient-billing-information-form"/>
   </action-view>
 
+
+  <menuitem name="healthcare-veterinary-root" title="veterinary" parent="healthcare-root"
+    order="1000" icon="fa-hospital"/>
+
+
+  <menuitem name="healthcare-veterinary-animal-detail-menu"
+    parent="healthcare-veterinary-root" title="Animal Detail"
+    action="health.care.action.animal.detail.view" order="130"/>
+
+  <action-view name="health.care.action.animal.detail.view" title="Animal Detail"
+    model="com.axelor.apps.healthcare.db.AnimalDetail">
+    <view type="grid" name="animal-detail-grid"/>
+    <view type="form" name="animal-detail-form"/>
+  </action-view>
+
+  <menuitem name="healthcare-veterinary-patient-menu" parent="healthcare-veterinary-root"
+    hidden="true" title="Veterinary Patient" action="health.care.action.veterinary.patient.view"
+    order="130"/>
+
+  <action-view name="health.care.action.veterinary.patient.view"
+    title="Veterinary Patient" model="com.axelor.apps.healthcare.db.VeterinaryPatient">
+    <view type="grid" name="veterinary-patient-grid"/>
+    <view type="form" name="veterinary-patient-form"/>
+  </action-view>
 
 
   <menuitem name="healthcare-patient-home" parent="healthcare-root" title="Patient Home"

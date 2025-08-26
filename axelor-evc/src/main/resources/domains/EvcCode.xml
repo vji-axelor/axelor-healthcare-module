@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_7.0.xsd">
+
+  <module name="evc" package="com.axelor.apps.evc.db"/>
+
+  <entity name="EvcCode">
+
+    <string name="evcCode" title="Name" namecolumn="true"/>
+    <string name="codeTitle" title="Code Title"/>
+    <string name="codeDescription" title="Code Description"/>
+    <many-to-one ref="com.axelor.apps.evc.db.ProcedureCategory" name="procedureCategory"
+      title="Procedure Category"/>
+    <many-to-one ref="com.axelor.apps.evc.db.ApplicableSpecies" name="applicableSpecies"
+      title="Applicable Species"/>
+    <string name="complexityLevel" title="complexityLevel"
+      selection="evc-code-complexity-level-selection"/>
+    <integer name="codeVersion" title="Code Version"/>
+    <integer name="revisionNumber" title="Revision Number"/>
+    <date name="effectiveDate" title="Effective Date" massUpdate="true"/>
+    <date name="expirationDate" title="Expiration Date"/>
+    <string name="approvalStatus" title="Approval Status"
+      selection="evc-code-approval-status-selection"/>
+    <boolean name="requiresAnesthesia" title="Requires Anesthesia"/>
+
+  </entity>
+
+
+
+
+</domain-models>

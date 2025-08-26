@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_7.0.xsd">
+
+  <module name="healthcare" package="com.axelor.apps.healthcare.db"/>
+
+  <entity name="VeterinaryPatient">
+
+    <many-to-one name="picture" ref="com.axelor.meta.db.MetaFile" title="Photo"
+      index="false"/>
+    <string name="preferredPronoun" title="Preferred Pronoun"
+      selection="healthcare-patient-select-preferred-pronoun"/>
+    <string name="firstName" title="First name" namecolumn="true"/>
+    <string name="middleName" title="Middle Name"/>
+    <string name="lastName" title="Last Name"/>
+    <string name="fullName" title="Full Name"/>
+    <date name="dateOfBirth" title="Date Of Birth"/>
+
+    <string name="mobile" title="Mobile"/>
+    <string name="phone" title="Phone"/>
+    <string name="email" title="Email"/>
+
+    <integer name="statusSelect" title="Status" selection="healthcare-patient-status-select"/>
+    <string name="emergencyContactName" title="Emergency Contact Name"/>
+    <string name="emergencyContactPhone" title="Emergency Contact Phone"/>
+    <string name="practiceType" title="Practice Type"
+      selection="healthcare-veterinary-patient-practice-type-selection"/>
+    <string name="preferredPaymentMethod" title="Preferred Payment Method"
+      selection="healthcare-veterinary-patient-payment-type-selection"/>
+
+    <string name="insuranceProvider" title="Insurance Provider"/>
+    <string name="policyNumber" title="Policy Number"/>
+
+
+    <date name="lastVisitDate" title="Last Visit Date"/>
+
+    <!-- Address/Contact -->
+
+    <one-to-many name="patientAddress" title="Veterinary Patient Address"
+      ref="com.axelor.apps.healthcare.db.PatientAddress" mappedBy="veterinaryPatient"/>
+
+    <!-- <one-to-many name="animalDetail" title="Animal Detail" ref="com.axelor.apps.healthcare.db.AnimalDetail"
+      mappedBy="veterinaryPatient"/> -->
+
+    <string name="ownerDetails" title="Owner Details" large="true"/>
+
+    <!-- <one-to-many name="animalAppointmentInfo" title="Animal Appointment Info" ref="com.axelor.apps.healthcare.db.PatientAppointment"
+      mappedBy="veterinaryPatient"/> -->
+    <many-to-one name="userAssignTo" ref="com.axelor.auth.db.User" title="User Assign"
+      index="false" massUpdate="true"/>
+
+  </entity>
+
+</domain-models>

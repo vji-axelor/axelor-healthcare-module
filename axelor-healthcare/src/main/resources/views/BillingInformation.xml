@@ -31,7 +31,7 @@
 
     <panel-related field="procedureDetails" title="Procedure Details"
       grid-view="patient-procedure-details-grid" form-view="patient-procedure-details-form"/>
-      
+
     <panel sidebar="true">
       <field name="patient" readonly="true"/>
     </panel>

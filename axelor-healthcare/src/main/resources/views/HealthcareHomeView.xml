@@ -13,9 +13,10 @@
     onNew="" width="large" editable="false" canDelete="false" canEdit="false" canNew="false"
     canSave="false" canCopy="false" canArchive="false" canAttach="false">
     <panel name="moduleIconPanel" colSpan="12">
-      <panel name="mainModulePanel" colSpan="10" itemSpan="2" colOffset="2">
-        <button name="healthcarePractitioner" title="Healthcare Practitioner" onClick="action.healthcare.practitioner.patient"
-          widget="info-button" css="img-button client-img-menu btn-default" icon="fa-hospital-o"/>
+      <panel name="mainModulePanel" colSpan="10" itemSpan="2" colOffset="1" title="Healthcare">
+        <button name="healthcarePractitioner" title="Healthcare Practitioner"
+          onClick="action.healthcare.practitioner.patient" widget="info-button"
+          css="img-button client-img-menu btn-default" icon="fa-hospital-o"/>
         <button name="patient" title="Patient" onClick="action.healthcare.patient"
           widget="info-button" css="img-button client-img-menu btn-default" icon="fa-user"/>
         <button name="patientAppointment" title="Patient Appointment"
@@ -27,12 +28,15 @@
         <button name="practitionerSchedule" title="Practitioner Schedule"
           onClick="wizard-supplier-form-open-my-purchase-order" widget="info-button"
           css="img-button client-img-menu btn-default" icon="fa-plus-square"/>
+        <button name="billingInformation" title="Billing Information"
+          onClick="action.patient.billing.view" widget="info-button"
+          css="img-button client-img-menu btn-default" icon="fa-plus-square"/>
       </panel>
     </panel>
     <panel name="indicatorsPanel" colSpan="12">
-      <panel name="mainDashboardPanel" colSpan="10" itemSpan="2" colOffset="2">
-        <panel name="purchaseOrderPanel" title="Healthcare" itemSpan="12">
-          <button name="$orders" title="Orders" width="190px" widget="info-button"
+      <panel name="mainDashboardPanel" colSpan="10" itemSpan="2" colOffset="1">
+        <panel name="purchaseOrderPanel" title="HR Module" itemSpan="12">
+          <button name="$orders" title="Employee" width="190px" widget="info-button"
             icon="fa-user" onClick="action-method-supplier-view-get-purchase-order"/>
           <button name="$quotationInProgress" title="Quotation in progress" width="190px"
             widget="info-button"

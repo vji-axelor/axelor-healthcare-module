@@ -4,6 +4,7 @@
   xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_7.0.xsd">
 
   <grid name="patient-grid" title="Patient" model="com.axelor.apps.healthcare.db.Patient">
+    <field name="patientType"/>
     <field name="firstName"/>
     <field name="lastName"/>
     <field name="mobile"/>
@@ -14,6 +15,9 @@
 
   <form name="patient-form" title="Patient" model="com.axelor.apps.healthcare.db.Patient"
     width="large">
+    <panel>
+      <field name="patientType"/>
+    </panel>
     <panel name="mainPanel">
       <panel name="imagePanel" colSpan="2">
         <field name="picture" showTitle="false" widget="Image" colSpan="12">
@@ -43,7 +47,8 @@
       </panel>
     </panel>
     <panel-tabs name="mainPanelTab">
-      <panel name="infoPanel" title="Information" colSpan="12">
+      <panel name="infoPanel" title="Information" colSpan="12"
+        showIf="patientType == 'Normal'">
         <field name="statusSelect" colSpan="3"/>
         <field name="identificationNumber" colSpan="3"/>
         <field name="socialSecurityNumber" colSpan="3"/>
@@ -71,7 +76,28 @@
         <field name="patientDetails" colSpan="6"/>
       </panel>
 
-      <panel name="addressPanel" title="Address/Contacts" colSpan="12">
+      <panel name="infoPanel" title="Information" colSpan="12"
+        showIf="patientType == 'Veterinary'">
+        <field name="statusSelect" colSpan="3"/>
+        <field name="emergencyContactName" colSpan="3"/>
+        <field name="emergencyContactPhone" colSpan="3"/>
+        <field name="practiceType" colSpan="3"/>
+
+        <field name="preferredPaymentMethod" colSpan="3"/>
+        <field name="insuranceProvider" colSpan="3"/>
+        <field name="policyNumber" colSpan="3"/>
+        <field name="lastVisitDate" colSpan="3"/>
+
+        <spacer colSpan="12"/>
+        <field name="ownerDetails" colSpan="6"/>
+      </panel>
+      <panel name="animalDetailPanel" title="Animal Detail" colSpan="12"
+        showIf="patientType == 'Veterinary'">
+        <panel-related field="animalDetail" colSpan="12"/>
+      </panel>
+
+      <panel name="addressPanel" title="Address/Contacts" colSpan="12"
+        showIf="patientType != null">
         <panel-related field="patientAddress" colSpan="12"
           form-view="patient-address-form" grid-view="patient-address-grid"/>
         <spacer colSpan="12"/>
@@ -79,11 +105,13 @@
           form-view="patient-relation-form" grid-view="patient-relation-grid"/>
       </panel>
 
-      <panel name="appointmentPanel" title="Appointment" colSpan="12">
+      <panel name="appointmentPanel" title="Appointment" colSpan="12"
+        showIf="patientType != null">
         <panel-related field="patientAppointmentInfo" colSpan="12"/>
       </panel>
 
-      <panel name="medicalHistoryPanel" title="Medical History" colSpan="12">
+      <panel name="medicalHistoryPanel" title="Medical History" colSpan="12"
+        showIf="patientType == 'Normal'">
         <panel name="personalAndSocialHistoryPanel" title="Personal and Social History"
           colSpan="12">
           <field name="occupation"/>
@@ -106,7 +134,8 @@
           <field name="otherRiskFactors" widget="html"/>
         </panel>
       </panel>
-      <panel name="insuranceBillingPanel" title="Insurance/Billing" colSpan="12">
+      <panel name="insuranceBillingPanel" title="Insurance/Billing" colSpan="12"
+        showIf="patientType != null">
         <panel-related field="insuranceInformation" colSpan="12"
           grid-view="patient-insurance-information-grid"
           form-view="patient-insurance-information-form"/>
@@ -121,6 +150,7 @@
     <panel sidebar="true">
       <field name="healthcarePractitioner"/>
       <field name="userAssignTo" title="Assign User"/>
+      <field name="companyAssign" title="Associated To"/>
     </panel>
     <panel-mail name="mailsPanel">
       <mail-messages limit="4"/>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_7.0.xsd">
+
+  <module name="healthcare" package="com.axelor.apps.healthcare.db"/>
+
+  <entity name="AnimalDetail">
+
+    <!-- Main identifier -->
+
+    <string name="animalName" title="Animal Name" namecolumn="true"/>
+
+    <!-- Basic Info -->
+    <string name="species" title="Species"
+      selection="healthcare-animal-detail-species-selection"/>
+    <string name="breed" title="Breed"/>
+    <date name="dateOfBirth" title="Date of Birth"/>
+    <integer name="age" title="Age"/>
+    <string name="gender" title="Gender"
+      selection="healthcare-animal-detail-gender-selection"/>
+    <decimal name="weight" title="Weight" scale="2" precision="10"/>
+    <string name="colorMarkings" title="Color/Markings"/>
+
+    <!-- Identification -->
+    <string name="microchipNumber" title="Microchip Number"/>
+    <date name="microchipDate" title="Microchip Date"/>
+
+    <!-- Medical & Visits -->
+    <string name="status" title="Status"
+      selection="healthcare-animal-detail-status-selection"/>
+    <date name="lastVisitDate" title="Last Visit Date"/>
+    <date name="nextDueServices" title="Next Due Services"/>
+    <string name="medicalNotes" title="Medical Notes" large="true"/>
+    <string name="allergies" title="Allergies" large="true"/>
+    <string name="currentMedications" title="Current Medications" large="true"/>
+    <string name="behaviorNotes" title="Behavior Notes" large="true"/>
+
+    <!-- Media -->
+    <many-to-one name="animalPicture" ref="com.axelor.meta.db.MetaFile" title="Photo"
+      index="false"/>
+
+    <many-to-one ref="com.axelor.apps.healthcare.db.Patient" name="veterinaryPatient"
+      title="veterinary Patient"/>
+
+    <many-to-one name="userAssignTo" ref="com.axelor.auth.db.User" title="User Assign"
+      index="false" massUpdate="true"/>
+
+    <many-to-one ref="com.axelor.apps.healthcare.db.HealthcarePractitioner"
+      name="healthcarePractitioner" title="Healthcare Practitioner"/>
+
+    <many-to-one name="companyAssign" ref="com.axelor.apps.base.db.Company"
+      title="Associated to"/>
+
+  </entity>
+
+</domain-models>

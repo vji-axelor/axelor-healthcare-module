@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_7.2.xsd">
+
+  <menuitem name="evc-root" title="EVC" order="900" icon="fa-hospital"/>
+
+  <menuitem name="evc-code" parent="evc-root" title="EVC Code" action="action.evc.code"
+    order="100"/>
+
+  <action-view name="action.evc.code" title="EVC Code"
+    model="com.axelor.apps.evc.db.EvcCode">
+    <view type="grid" name="evc-evc-code-grid"/>
+    <view type="form" name="evc-evc-code-form"/>
+  </action-view>
+
+  <menuitem name="evc-applicable-species" parent="evc-root" title="Applicable Species"
+    action="action.evc.applicable.species" order="125"/>
+
+  <action-view name="action.evc.applicable.species" title="Applicable Species"
+    model="com.axelor.apps.evc.db.ApplicableSpecies">
+    <view type="grid" name="evc-applicable-species-grid"/>
+    <view type="form" name="evc-applicable-species-form"/>
+  </action-view>
+
+  <menuitem name="evc-procedure-category" parent="evc-root" title="Procedure Category"
+    action="action.evc.procedure.category" order="150"/>
+
+  <action-view name="action.evc.procedure.category" title="Procedure Category"
+    model="com.axelor.apps.evc.db.ProcedureCategory">
+    <view type="grid" name="evc-procedure-category-grid"/>
+    <view type="form" name="evc-procedure-category-form"/>
+  </action-view>
+
+</object-views>

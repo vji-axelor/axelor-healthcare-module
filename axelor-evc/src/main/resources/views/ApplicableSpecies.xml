@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_7.0.xsd">
+
+  <grid name="evc-applicable-species-grid" title="Applicable Species"
+    model="com.axelor.apps.evc.db.ApplicableSpecies">
+    <field name="name" title="Name"/>
+    <field name="code" title="Code"/>
+  </grid>
+
+  <form name="evc-applicable-species-form" title="Applicable Species"
+    model="com.axelor.apps.evc.db.ApplicableSpecies" width="large">
+    <panel name="mainPanel">
+      <field name="name" title="Name"/>
+      <field name="code" title="Code"/>
+    </panel>
+
+  </form>
+</object-views>

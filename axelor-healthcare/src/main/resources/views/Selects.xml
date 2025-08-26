@@ -97,4 +97,54 @@
     <option value="Overdue">Overdue</option>
   </selection>
 
+
+  <selection name="healthcare-animal-detail-species-selection">
+    <option value="Canine">Canine</option>
+    <option value="Feline">Feline</option>
+    <option value="Avian">Avian</option>
+    <option value="Equine">Equine</option>
+    <option value="Rabbit">Rabbit</option>
+    <option value="Exotic">Exotic</option>
+  </selection>
+
+  <selection name="healthcare-animal-detail-gender-selection">
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+    <option value="Spayed Female">Spayed Female</option>
+    <option value="Neutered Male">Neutered Male</option>
+  </selection>
+
+  <selection name="healthcare-animal-detail-status-selection">
+    <option value="Active">Active</option>
+    <option value="Deceased">Deceased</option>
+    <option value="Transferred">Transferred</option>
+  </selection>
+
+  <selection name="healthcare-veterinary-patient-practice-type-selection">
+    <option value="Dental">Dental</option>
+    <option value="Veterinary">Veterinary</option>
+    <option value="Both">Both</option>
+  </selection>
+
+  <selection name="healthcare-veterinary-patient-payment-type-selection">
+    <option value="Cash">Cash</option>
+    <option value="Credit Card">Credit Card</option>
+    <option value="Check">Check</option>
+    <option value="Pet Insurance">Pet Insurance</option>
+    <option value="CareCredit">CareCredit</option>
+  </selection>
+
+  <selection name="healthcare-patient-type-select">
+    <option value="Veterinary">Veterinary</option>
+    <option value="Normal">Normal</option>
+  </selection>
+
+  <selection name="healthcare-practitioner-type-select">
+    <option value="Veterinarian">Veterinarian</option>
+    <option value="Veterinary">Veterinary</option>
+    <option value="Veterinary Technician">Veterinary Technician</option>
+    <option value="Veterinary Assistant">Veterinary Assistant</option>
+    <option value="Normal">Normal</option>
+  </selection>
+
 </object-views>

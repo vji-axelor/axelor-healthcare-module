@@ -7,14 +7,17 @@
     model="com.axelor.apps.healthcare.db.HealthcarePractitioner">
     <field name="firstName"/>
     <field name="lastName"/>
-    <field name="mobile" />
-    <field name="email" />
-    <field name="license" />
-    <field name="statusSelect" />
+    <field name="mobile"/>
+    <field name="email"/>
+    <field name="license"/>
+    <field name="statusSelect"/>
   </grid>
 
   <form name="healthcare-practitioner-form" title="Healthcare Practitioner"
     model="com.axelor.apps.healthcare.db.HealthcarePractitioner" width="large">
+    <panel name="typePanel">
+      <field name="practitionerType" colSpan="3"/>
+    </panel>
     <panel name="mainPanel">
       <panel name="imagePanel" colSpan="2">
         <field name="picture" showTitle="false" widget="Image" colSpan="12">
@@ -48,12 +51,34 @@
     <panel-tabs name="mainPanelTab">
       <panel name="infoPanel" title="Information" colSpan="12">
         <field name="statusSelect" colSpan="4"/>
-        <field name="license" colSpan="4"/>
-        <field name="practitionerNumber" colSpan="4"/>
-
         <field name="designation" colSpan="4"/>
         <field name="specialty" colSpan="4"/>
 
+
+        <field name="license" colSpan="4"/>
+        <field name="licenseIssueDate" title="License Issue Date" colSpan="4"/>
+        <field name="licenseExpiryDate" title="License Expiry Date" colSpan="4"/>
+
+        <field name="practitionerNumber" colSpan="4"/>
+        <field name="deaNumber" title="Dea Number" colSpan="4"/>
+        <field name="deaExpiryDate" title="Dea Expiry Date" colSpan="4"/>
+
+        <field name="professionalMemberships" title="Professional Memberships" colSpan="4"/>
+        <field name="primarySpecialization" title="Primary Specialization" colSpan="4"/>
+        <field name="yearsExperience" title="Years Experience" colSpan="4"/>
+
+        <field name="emergencyContactName" title="emergency Contact Name" colSpan="4"/>
+        <field name="emergencyContactPhone" title="emergency Contact Phone" colSpan="4"/>
+        <field name="continuingEducationHours" title="continuing Education Hours" colSpan="4"/>
+
+      </panel>
+
+      <panel title="Veterinary" colSpan="12">
+        <field name="deaNumber" title="Dea Number" colSpan="6"/>
+        <field name="deaExpiryDate" title="Dea Expiry Date" colSpan="6"/>
+        <field name="veterinarySpecializations" colSpan="6"/>
+        <field name="speciesCompetencies" colSpan="6"/>
+        <field name="isCeRequirementsMet" colSpan="6"/>
       </panel>
 
       <panel name="addressPanel" title="Address/Contacts" colSpan="12">
@@ -66,8 +91,13 @@
       </panel>
     </panel-tabs>
 
+    <panel name="notePanel" title="Notes">
+      <field name="notes" widget="html"/>
+    </panel>
+
     <panel sidebar="true">
       <field name="userAssignTo"/>
+      <field name="companyAssign" title="Associated To"/>
     </panel>
     <panel-mail name="mailsPanel">
       <mail-messages limit="4"/>

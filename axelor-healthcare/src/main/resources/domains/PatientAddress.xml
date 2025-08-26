@@ -13,6 +13,9 @@
     <many-to-one ref="com.axelor.apps.healthcare.db.Patient" name="patient"
       title="patient"/>
 
+    <many-to-one ref="com.axelor.apps.healthcare.db.VeterinaryPatient"
+      name="veterinaryPatient" title="veterinary Patient"/>
+
     <many-to-one ref="com.axelor.apps.healthcare.db.HealthcarePractitioner"
       name="healthcarePractitioner" title="Healthcare Practitioner"/>
 

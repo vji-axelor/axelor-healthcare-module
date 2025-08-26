@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_7.0.xsd">
+
+  <grid name="veterinary-patient-grid" title="Veterinary Patient"
+    model="com.axelor.apps.healthcare.db.VeterinaryPatient">
+    <field name="firstName"/>
+    <field name="lastName"/>
+    <field name="mobile"/>
+    <field name="email"/>
+    <field name="dateOfBirth"/>
+    <field name="statusSelect"/>
+  </grid>
+
+  <form name="veterinary-patient-form" title="Veterinary Patient"
+    model="com.axelor.apps.healthcare.db.VeterinaryPatient" width="large">
+    <panel name="mainPanel">
+      <panel name="imagePanel" colSpan="2">
+        <field name="picture" showTitle="false" widget="Image" colSpan="12">
+          <viewer>
+            <![CDATA[
+            		<>
+     					{id && <Image src={$image('id', 'content')} style={{ width: "80%" }}></Image>}
+     					{!id && _parent.partnerTypeSelect != 2 && <Image src="img/company-default.jpg" style={{ width: "80%" }}></Image>}
+     					{!id && _parent.partnerTypeSelect == 2 && _parent.titleSelect == 1 && <Image src="img/partner-m-default.png" style={{ width: "80%" }}></Image>}
+     					{!id && _parent.partnerTypeSelect == 2 && _parent.titleSelect == 2 && <Image src="img/partner-w-default.png" style={{ width: "80%" }}></Image>}
+     					{!id && _parent.partnerTypeSelect == 2 && (_parent.titleSelect > 2 || !_parent.titleSelect) && <Image src="img/partner-default.png" style={{ width: "80%" }}></Image>}
+					</>
+					]]>
+          </viewer>
+        </field>
+      </panel>
+      <panel name="generalInfoPanel" colSpan="10">
+        <field name="preferredPronoun" colSpan="3"/>
+        <field name="firstName" colSpan="3"/>
+        <field name="middleName" colSpan="3"/>
+        <field name="lastName" colSpan="3"/>
+
+        <field name="dateOfBirth" colSpan="3"/>
+        <field name="mobile" colSpan="3" widget="phone" x-initial-country="US"/>
+        <field name="phone" colSpan="3" widget="phone" x-initial-country="US"/>
+        <field name="email" colSpan="3" widget="email"/>
+      </panel>
+    </panel>
+    <panel-tabs name="mainPanelTab">
+      <panel name="infoPanel" title="Information" colSpan="12">
+        <field name="statusSelect" colSpan="3"/>
+        <field name="emergencyContactName" colSpan="3"/>
+        <field name="emergencyContactPhone" colSpan="3"/>
+        <field name="practiceType" colSpan="3"/>
+
+        <field name="preferredPaymentMethod" colSpan="3"/>
+        <field name="insuranceProvider" colSpan="3"/>
+        <field name="policyNumber" colSpan="3"/>
+        <field name="lastVisitDate" colSpan="3"/>
+
+        <spacer colSpan="12"/>
+        <field name="ownerDetails" colSpan="6"/>
+      </panel>
+
+      <panel name="addressPanel" title="Address/Contacts" colSpan="12">
+        <panel-related field="patientAddress" colSpan="12"
+          form-view="patient-address-form" grid-view="patient-address-grid"/>
+      </panel>
+
+      <panel name="appointmentPanel" title="Appointment" colSpan="12">
+        <panel-related field="animalAppointmentInfo" colSpan="12"/>
+      </panel>
+
+      <panel name="animalDetailPanel" title="Animal Detail" colSpan="12">
+        <panel-related field="animalDetail" colSpan="12"/>
+      </panel>
+
+    </panel-tabs>
+
+    <panel sidebar="true">
+      <field name="healthcarePractitioner"/>
+      <field name="userAssignTo" title="Assign User"/>
+    </panel>
+    <panel-mail name="mailsPanel">
+      <mail-messages limit="4"/>
+      <mail-followers/>
+    </panel-mail>
+  </form>
+</object-views>
