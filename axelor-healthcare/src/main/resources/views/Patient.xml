@@ -110,6 +110,11 @@
         <panel-related field="patientAppointmentInfo" colSpan="12"/>
       </panel>
 
+      <panel name="encounterPanel" title="Encounter" colSpan="12" showIf="patientType != null">
+        <panel-related field="patientEncounter" colSpan="12"
+          grid-view="patient-encounter-grid" form-view="patient-encounter-form"/>
+      </panel>
+
       <panel name="medicalHistoryPanel" title="Medical History" colSpan="12"
         showIf="patientType == 'Normal'">
         <panel name="personalAndSocialHistoryPanel" title="Personal and Social History"
@@ -152,6 +157,12 @@
       <field name="userAssignTo" title="Assign User"/>
       <field name="companyAssign" title="Associated To"/>
     </panel>
+
+    <panel sidebar="true" title="Billing" name="">
+      <field name="totalBilling"/>
+      <field name="paymentCollected"/>
+    </panel>
+
     <panel-mail name="mailsPanel">
       <mail-messages limit="4"/>
       <mail-followers/>

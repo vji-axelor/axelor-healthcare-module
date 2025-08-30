@@ -102,6 +102,16 @@
     <one-to-many name="billingInformation" title="Billing Information"
       ref="com.axelor.apps.healthcare.db.BillingInformation" mappedBy="patient"/>
 
+    <decimal name="totalBilling" title="Total Billing"/>
+    <decimal name="paymentCollected" title="Payment Collected"/>
+
+    <!-- PatientEncounter -->
+
+    <one-to-many name="patientEncounter" title="Patient Encounter"
+      ref="com.axelor.apps.healthcare.db.PatientEncounter" mappedBy="patient"/>
+
+
+
     <many-to-one ref="com.axelor.apps.healthcare.db.HealthcarePractitioner"
       name="healthcarePractitioner" title="Healthcare Practitioner"/>
 

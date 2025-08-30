@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_7.0.xsd">
+
+  <grid name="patient-encounter-grid" title="Patient Encounter"
+    model="com.axelor.apps.healthcare.db.PatientEncounter">
+    <field name="encounterDateTime"/>
+    <field name="encounterType"/>
+    <field name="encounterStatus"/>
+    <field name="billingStatus"/>
+    <field name="isInsuranceClaimSubmitted"/>
+    <field name="totalCharges"/>
+    <field name="paymentCollected"/>
+  </grid>
+
+  <form name="patient-encounter-form" title="Patient Encounter"
+    model="com.axelor.apps.healthcare.db.PatientEncounter" width="large">
+    <panel>
+      <field name="patientType"/>
+    </panel>
+    <panel name="mainPanel" colSpan="3">
+      <field name="encounterDateTime"/>
+      <field name="encounterType"/>
+      <field name="encounterStatus"/>
+      <field name="billingStatus"/>
+    </panel>
+
+    <panel name="subPanel">
+      <field name="chiefComplaint" title="Chief Complaint"/>
+      <spacer/>
+      <field name="subjective" title="Subjective"/>
+      <field name="objective" title="Objective"/>
+      <field name="assessment" title="Assessment"/>
+      <field name="encounterPlan" title="Encounter Plan"/>
+    </panel>
+
+    <panel name="followupPanel">
+      <field name="nextAppointmentRecommended"/>
+      <spacer/>
+      <field name="followupInstructions"/>
+      <field name="encounterNotes"/>
+    </panel>
+
+    <panel sidebar="true" title="Info" name="infoPanel">
+      <field name="healthcarePractitioner"/>
+      <field name="encounterAnimalDetails"/>
+      <field name="patient" readonly="true"/>
+    </panel>
+
+    <panel sidebar="true" title="Billing" name="billingPanel">
+      <field name="isInsuranceClaimSubmitted"/>
+      <field name="totalCharges"/>
+      <field name="paymentCollected"/>
+    </panel>
+
+    <panel sidebar="true" title="EVC Code" name="evcPanel">
+      <field name="evcCode" title="EVC Code"/>
+    </panel>
+
+    <panel sidebar="true" title="Follow" name="followPanel">
+      <field name="signedBy"/>
+      <field name="signatureDate"/>
+    </panel>
+
+  </form>
+
+</object-views>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_7.0.xsd">
+
+  <module name="healthcare" package="com.axelor.apps.healthcare.db"/>
+
+  <entity name="PatientEncounter">
+
+    <string name="patientType" title="Patient Type"
+      selection="healthcare-patient-type-select" default="Veterinary"/>
+
+    <many-to-one ref="com.axelor.apps.healthcare.db.Patient" name="patient"
+      title="Patient"/>
+
+    <datetime name="encounterDateTime" title="Date/Time"/>
+    <string name="encounterType" title="Type"
+      selection="healthcare-patient-encounter-type-select"/>
+    <many-to-one ref="com.axelor.apps.healthcare.db.HealthcarePractitioner"
+      name="healthcarePractitioner" title="Healthcare Practitioner"/>
+    <!--field Staff needs to add -->
+    <many-to-one ref="com.axelor.apps.healthcare.db.AnimalDetail"
+      name="encounterAnimalDetails" title="Encounter Animal Details"/>
+
+    <string name="encounterStatus" title="Encounter Status"
+      selection="healthcare-patient-encounter-status-select"/>
+    <string name="billingStatus" title="Billing Status"
+      selection="healthcare-patient-encounter-billing-select"/>
+
+    <string name="chiefComplaint" title="Chief Complaint"/>
+    <string name="subjective" title="Subjective" large="true"/>
+    <string name="objective" title="Objective" large="true"/>
+    <string name="assessment" title="Assessment" large="true"/>
+    <string name="encounterPlan" title="Encounter Plan" large="true"/>
+
+    <!--field EVC code & suggested_codes needs to add -->
+    <string name="evcCode" title="EVC Code"/>
+
+    <!-- tables vital_signs medications_prescribed lab_orders -->
+
+    <date name="nextAppointmentRecommended" title="Next Appointment Recommended"/>
+    <string name="followupInstructions" title="Followup Instructions" large="true"/>
+    <string name="encounterNotes" title="Encounter Notes" large="true"/>
+
+    <decimal name="totalCharges" title="Total Charges"/>
+    <decimal name="paymentCollected" title="Payment Collected"/>
+
+    <boolean name="isInsuranceClaimSubmitted" title="Is Insurance Claim Submitted"/>
+
+    <many-to-one ref="com.axelor.apps.healthcare.db.HealthcarePractitioner"
+      name="signedBy" title="Signed By"/>
+    <date name="signatureDate" title="Signature Date"/>
+
+    <many-to-one name="companyAssign" ref="com.axelor.apps.base.db.Company"
+      title="Associated to"/>
+
+  </entity>
+
+</domain-models>

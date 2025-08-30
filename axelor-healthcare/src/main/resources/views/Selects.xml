@@ -147,4 +147,29 @@
     <option value="Normal">Normal</option>
   </selection>
 
+  <selection name="healthcare-patient-encounter-type-select">
+    <option value="Routine Visit">Routine Visit</option>
+    <option value="Wellness Exam">Wellness Exam</option>
+    <option value="Emergency">Emergency</option>
+    <option value="Surgical">Surgical</option>
+    <option value="Follow-up">Follow-up</option>
+    <option value="Vaccination">Vaccination</option>
+    <option value="Dental">Dental</option>
+    <option value="Grooming">Grooming</option>
+    <option value="Consultation">Consultation</option>
+  </selection>
+
+  <selection name="healthcare-patient-encounter-status-select">
+    <option value="In Progress">In Progress</option>
+    <option value="Completed">Completed</option>
+    <option value="Cancelled">Cancelled</option>
+    <option value="No Show">No Show</option>
+  </selection>
+
+  <selection name="healthcare-patient-encounter-billing-select">
+    <option value="Not Billed">Not Billed</option>
+    <option value="Pending">Pending</option>
+    <option value="Billed">Billed</option>
+    <option value="Paid">Paid</option>
+  </selection>
 </object-views>
