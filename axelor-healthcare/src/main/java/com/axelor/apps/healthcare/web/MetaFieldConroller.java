@@ -1,68 +1,96 @@
 package com.axelor.apps.healthcare.web;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import com.axelor.apps.base.service.exception.TraceBackService;
 import com.axelor.db.Model;
 import com.axelor.db.mapper.Mapper;
 import com.axelor.db.mapper.Property;
+import com.axelor.inject.Beans;
 import com.axelor.meta.CallMethod;
 import com.axelor.meta.MetaStore;
+import com.axelor.meta.db.MetaField;
+import com.axelor.meta.db.repo.MetaFieldRepository;
 import com.axelor.meta.schema.views.Selection.Option;
 import com.axelor.rpc.ActionRequest;
 import com.axelor.rpc.ActionResponse;
-import com.google.api.client.util.Strings;
+import com.google.common.base.Strings;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class MetaFieldConroller {
 
-	  @SuppressWarnings({"unchecked", "rawtypes"})
-	  @CallMethod
-	  public void getMetaFields(ActionRequest request, ActionResponse response) {
-	    try {
-	      Map<String, Object> data = request.getData();
-	      String model = (String) data.get("domain");
-	      Class<Model> klass = (Class<Model>) Class.forName(model);
-	      List<Map> metaFields = getMetaFieldList(klass);
-	      response.setValue("fields", metaFields);
-	    } catch (Exception e) {
-	      TraceBackService.trace(response, e);
-	    }
-	  }
-	  
-	  
-	  @SuppressWarnings("rawtypes")
-	  public List<Map> getMetaFieldList(Class<Model> klass) throws Exception {
+  @SuppressWarnings({"unchecked", "rawtypes"})
+  @CallMethod
+  public void getMetaFields(ActionRequest request, ActionResponse response) {
+    try {
+      Map<String, Object> data = request.getData();
+      String model = (String) data.get("domain");
+      Class<Model> klass = (Class<Model>) Class.forName(model);
+      List<Map> metaFields = getMetaFieldList(klass, model);
+      response.setValue("fields", metaFields);
+    } catch (Exception e) {
+      TraceBackService.trace(response, e);
+    }
+  }
 
-	    List<Map> metaFieldNames = new ArrayList<>();
-	    Mapper mapper = Mapper.of(klass);
+  @SuppressWarnings("rawtypes")
+  public List<Map> getMetaFieldList(Class<Model> klass, String model) throws Exception {
 
-	    for (Property property : mapper.getProperties()) {
+    List<Map> metaFieldNames = new ArrayList<>();
+    Mapper mapper = Mapper.of(klass);
 
-	      Map<String, Object> map = new HashMap<>();
+    for (Property property : mapper.getProperties()) {
 
-	      if (!Strings.isNullOrEmpty(property.getSelection())) {
-	        List<Option> selectionList = MetaStore.getSelectionList(property.getSelection());
-	        Map<String, Object> selectionItem = new HashMap<>();
+      Map<String, Object> map = new HashMap<>();
 
-	        for (Option item : selectionList) {
-	          selectionItem.put(item.getValue(), item.getTitle());
-	        }
-	        map.put("selectionItem", selectionItem);
-	      } else {
-	        map.put("selectionItem", null);
-	      }
+      if (!Strings.isNullOrEmpty(property.getSelection())) {
+        List<Option> selectionList = MetaStore.getSelectionList(property.getSelection());
+        Map<String, Object> selectionItem = new HashMap<>();
 
-	      map.put("field", property.getName());
-	      map.put("type", property.getType());
-	      map.put("require", property.isRequired());
-	      map.put("title", property.getTitle());
-	      map.put("relational", property.isReference());
+        for (Option item : selectionList) {
+          selectionItem.put(item.getValue(), item.getTitle());
+        }
+        map.put("selectionItem", selectionItem);
+      } else {
+        map.put("selectionItem", null);
+      }
 
-	      metaFieldNames.add(map);
-	    }
+      int lastDot = model.lastIndexOf(".");
+      String packageName = model.substring(0, lastDot);
+      String modelName = model.substring(lastDot + 1);
 
-	    return metaFieldNames;
-	  }
+      MetaField metaField = null;
+      String relationalModel = "";
+      if (property.getType().toString().equals("ONE_TO_MANY")
+          || property.getType().toString().equals("MANY_TO_ONE")
+          || property.getType().toString().equals("MANY_TO_MANY")
+          || property.getType().toString().equals("ONE_TO_ONE")) {
+
+        metaField =
+            Beans.get(MetaFieldRepository.class)
+                .all()
+                .filter(
+                    "self.name = ? AND self.metaModel.name = ? AND self.metaModel.packageName = ?",
+                    property.getName(),
+                    modelName,
+                    packageName)
+                .fetchOne();
+        if (metaField != null) {
+          relationalModel = metaField.getPackageName() + "." + metaField.getTypeName();
+        }
+      }
+
+      map.put("field", property.getName());
+      map.put("type", property.getType());
+      map.put("require", property.isRequired());
+      map.put("title", property.getTitle());
+      map.put("relational", property.isReference());
+      map.put("relationalModel", relationalModel);
+
+      metaFieldNames.add(map);
+    }
+
+    return metaFieldNames;
+  }
 }
