@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_7.0.xsd">
+
+  <grid name="patient-diagnosis-grid" title="Diagnosis"
+    model="com.axelor.apps.healthcare.db.Diagnosis">
+    <field name="diagnosisType"/>
+    <field name="diagnosisName"/>
+    <field name="code"/>
+    <field name="fromDate"/>
+    <field name="toDate"/>
+    <field name="diagnosisStatus"/>
+    <field name="patient"/>
+
+  </grid>
+
+  <form name="patient-diagnosis-form" title="Diagnosis"
+    model="com.axelor.apps.healthcare.db.Diagnosis" width="large">
+    <panel name="mainPanel">
+      <field name="diagnosisType"/>
+      <field name="diagnosisName"/>
+      <field name="code"/>
+      <field name="fromDate"/>
+      <field name="toDate"/>
+      <field name="diagnosisStatus"/>
+    </panel>
+
+    <panel>
+      <field name="notes"/>
+    </panel>
+
+  </form>
+</object-views>

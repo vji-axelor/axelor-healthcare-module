@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_7.0.xsd">
+
+  <module name="healthcare" package="com.axelor.apps.healthcare.db"/>
+
+  <entity name="ServiceUnit">
+
+    <string name="name" title="Service Unit Name" namecolumn="true"/>
+    <string name="serviceUnitType" title="service Unit Type" selection=""/>
+    <string name="unitCode" title="Unit Code"/>
+
+    <one-to-many name="serviceUnitAddress" title="Service Unit Address"
+      ref="com.axelor.apps.healthcare.db.ServiceUnitAddress" mappedBy="serviceUnit"/>
+
+    <string name="floorLevel" title="Floor Level" selection=""/>
+    <string name="roomNumber" title="Room Number"/>
+    <integer name="capacity" title="Capacity"/>
+    <decimal name="squareFootage" title="Square Footage"/>
+
+    <integer name="cleaningTimeRequired" title="Cleaning Time Required"/>
+    <integer name="setupTimeRequired" title="Setup Time Required"/>
+
+    <boolean name="temperature_controlled" title="temperature_controlled"/>
+    <boolean name="isolationCapable" title="Isolation Capable"/>
+    <boolean name="emergencyAccess" title="Emergency Access"/>
+    <boolean name="oxygenAvailable" title="Oxygen Available"/>
+    <boolean name="suctionAvailable" title="Suction vailable"/>
+
+    <integer name="electricalOutlets" title="Electrical Outlets"/>
+  </entity>
+
+</domain-models>

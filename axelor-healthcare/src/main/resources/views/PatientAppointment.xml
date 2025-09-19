@@ -18,6 +18,7 @@
       <field name="appointmentDate"/>
       <field name="patient"/>
       <field name="healthcarePractitioner"/>
+      <field name="notes" colSpan="12"/>
     </panel>
 
   </form>

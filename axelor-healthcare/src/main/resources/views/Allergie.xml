@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_7.0.xsd">
+
+  <grid name="patient-allergie-grid" title="Allergie"
+    model="com.axelor.apps.healthcare.db.Allergie">
+    <field name="allergieType"/>
+    <field name="allergieName"/>
+    <field name="severity"/>
+    <field name="observedDate"/>
+    <field name="allergieStatus"/>
+    <field name="reaction"/>
+    <field name="patient"/>
+
+  </grid>
+
+  <form name="patient-allergie-form" title="Allergie"
+    model="com.axelor.apps.healthcare.db.Allergie" width="large">
+    <panel name="mainPanel">
+      <field name="allergieType"/>
+      <field name="allergieName"/>
+      <field name="severity"/>
+      <field name="observedDate"/>
+      <field name="allergieStatus"/>
+      <field name="reaction"/>
+      <field name="patient"/>
+    </panel>
+
+  </form>
+</object-views>

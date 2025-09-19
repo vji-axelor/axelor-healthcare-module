@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_7.0.xsd">
+
+  <grid name="patient-injection-order-grid" title="Injection Order"
+    model="com.axelor.apps.healthcare.db.InjectionOrder">
+    <field name="name"/>
+    <field name="icdCode"/>
+    <field name="frequency"/>
+    <field name="dosage"/>
+    <field name="dosageUnit"/>
+    <field name="periodValue"/>
+    <field name="periodUnit"/>
+    <field name="route"/>
+    <field name="site"/>
+    <field name="lotNumber"/>
+    <field name="expirationDate"/>
+    <field name="administeredDate"/>
+    <field name="administeredTime"/>
+    <field name="noteToNurse"/>
+    <field name="comments"/>
+    <field name="patient"/>
+  </grid>
+
+  <form name="patient-injection-order-form" title="Injection Order"
+    model="com.axelor.apps.healthcare.db.InjectionOrder" width="large">
+    <panel name="mainPanel">
+      <field name="name"/>
+      <field name="icdCode"/>
+      <field name="frequency"/>
+      <spacer/>
+      <field name="dosage" colSpan="3"/>
+      <field name="dosageUnit" colSpan="3"/>
+      <field name="periodValue" colSpan="3"/>
+      <field name="periodUnit" colSpan="3"/>
+      <field name="route"/>
+      <field name="site"/>
+      <field name="lotNumber"/>
+      <field name="expirationDate"/>
+      <field name="administeredDate"/>
+      <field name="administeredTime"/>
+      <field name="noteToNurse"/>
+      <field name="comments"/>
+    </panel>
+
+  </form>
+</object-views>

@@ -172,4 +172,16 @@
     <option value="Billed">Billed</option>
     <option value="Paid">Paid</option>
   </selection>
+
+  <selection name="healthcare-diagnosis-status-select">
+    <option value="Active">Active</option>
+    <option value="Inactive">Inactive</option>
+  </selection>
+
+  <selection name="healthcare-allergie-status-select">
+    <option value="Active">Active</option>
+    <option value="Inactive">Inactive</option>
+  </selection>
+
+
 </object-views>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_7.0.xsd">
+
+  <module name="healthcare" package="com.axelor.apps.healthcare.db"/>
+
+  <entity name="Medication">
+
+    <string name="medicationType" title="Allergie Type"
+      selection="healthcare-patient-type-select" default="Veterinary"/>
+
+    <string name="drugName" title="Allergie" namecolumn="true"/>
+    <string name="directions" title="Directions" large="true"/>
+
+    <integer name="dispenseQty" title="Dispense Quentity"/>
+    <integer name="dayOfSupply" title="Day of Spply"/>
+    <integer name="refills" title="Refills"/>
+
+    <date name="fromDate" title="From Date"/>
+    <date name="toDate" title="To Date"/>
+
+    <string name="statusNote" title="Status Note"/>
+
+    <many-to-one ref="com.axelor.apps.healthcare.db.PatientEncounter"
+      name="patientEncounter" title="Patient Encounter"/>
+
+    <many-to-one ref="com.axelor.apps.healthcare.db.HealthcarePractitioner"
+      name="healthcarePractitioner" title="Healthcare Practitioner"/>
+
+    <many-to-one name="companyAssign" ref="com.axelor.apps.base.db.Company"
+      title="Associated to"/>
+
+  </entity>
+
+</domain-models>

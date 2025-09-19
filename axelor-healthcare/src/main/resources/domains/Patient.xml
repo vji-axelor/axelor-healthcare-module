@@ -110,6 +110,16 @@
     <one-to-many name="patientEncounter" title="Patient Encounter"
       ref="com.axelor.apps.healthcare.db.PatientEncounter" mappedBy="patient"/>
 
+    <!-- Diagnosis -->
+
+    <one-to-many name="patientDiagnosis" title="Diagnosis"
+      ref="com.axelor.apps.healthcare.db.Diagnosis" mappedBy="patient"/>
+
+    <!-- Allergie -->
+
+    <one-to-many name="patientAllergie" title="Allergie"
+      ref="com.axelor.apps.healthcare.db.Allergie" mappedBy="patient"/>
+
 
 
     <many-to-one ref="com.axelor.apps.healthcare.db.HealthcarePractitioner"
@@ -125,6 +135,18 @@
 
     <one-to-many name="animalDetail" title="Animal Detail"
       ref="com.axelor.apps.healthcare.db.AnimalDetail" mappedBy="veterinaryPatient"/>
+
+    <!-- Injection -->
+    <one-to-many name="injectionOrder" title="Injection Order"
+      ref="com.axelor.apps.healthcare.db.InjectionOrder" mappedBy="patient"/>
+
+    <!-- Lab Record -->
+    <one-to-many name="labRecord" title="Lab Record"
+      ref="com.axelor.apps.healthcare.db.LabRecord" mappedBy="patient"/>
+
+    <!-- Lab Record -->
+    <one-to-many name="referralSchedule" title="Referral Schedule"
+      ref="com.axelor.apps.healthcare.db.ReferralSchedule" mappedBy="patient"/>
 
 
     <!-- <integer name="statusSelect" title="Status" selection="healthcare-patient-status-select"/> -->

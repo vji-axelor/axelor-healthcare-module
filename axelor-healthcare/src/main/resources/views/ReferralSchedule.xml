@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_7.0.xsd">
+
+  <grid name="patient-referral-schedule-grid" title="Referral Schedule"
+    model="com.axelor.apps.healthcare.db.ReferralSchedule">
+    <field name="name"/>
+    <field name="referralFrom"/>
+    <field name="internalReference"/>
+    <field name="externalReference"/>
+    <field name="referralReason"/>
+    <field name="referralDate"/>
+    <field name="priority"/>
+    <field name="insurance"/>
+    <field name="referralNotes"/>
+    <field name="diagnoses"/>
+    <field name="patient"/>
+  </grid>
+
+  <form name="patient-referral-schedule-form" title="Referral Schedule"
+    model="com.axelor.apps.healthcare.db.ReferralSchedule" width="large">
+    <panel name="mainPanel">
+      <field name="referralFrom"/>
+      <spacer/>
+      <field name="internalReference"/>
+      <field name="externalReference"/>
+      <field name="referralReason" colSpan="12"/>
+      <field name="referralDate"/>
+      <field name="priority"/>
+      <field name="insurance"/>
+      <field name="referralNotes"/>
+      <field name="diagnoses"/>
+    </panel>
+  </form>
+</object-views>

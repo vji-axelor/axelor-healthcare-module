@@ -58,6 +58,12 @@
       <field name="evcCode" title="EVC Code"/>
     </panel>
 
+    <panel-tabs>
+      <panel-related field="medication" form-view="patient-medication-form"
+        grid-view="patient-medication-grid"/>
+      <panel-related field="vitalSigns" form-view="" grid-view=""/>
+    </panel-tabs>
+
     <panel sidebar="true" title="Follow" name="followPanel">
       <field name="signedBy"/>
       <field name="signatureDate"/>

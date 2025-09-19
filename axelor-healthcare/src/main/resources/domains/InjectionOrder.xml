@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_7.0.xsd">
+
+  <module name="healthcare" package="com.axelor.apps.healthcare.db"/>
+
+  <entity name="InjectionOrder">
+
+    <string name="name" title="Medication Name"/>
+    <string name="icdCode" title="ICD Code"/>
+
+    <decimal name="dosage" title="Dosage"/>
+    <string name="dosageUnit" title="Dosage Unit"/>
+
+    <string name="frequency" title="Frequency"/>
+
+    <integer name="periodValue" title="Period Value"/>
+    <string name="periodUnit" title="Period Unit"/>
+
+    <string name="route" title="Parenteral Route"/>
+    <string name="site" title="Injection Site"/>
+
+    <string name="lotNumber" title="Lot Number"/>
+    <date name="expirationDate" title="Expiration Date"/>
+
+    <date name="administeredDate" title="Administered Date"/>
+    <time name="administeredTime" title="Administered Time"/>
+
+    <string name="noteToNurse" title="Note to Nurse" large="true"/>
+    <string name="comments" title="Comments" large="true"/>
+
+    <many-to-one name="patient" ref="com.axelor.apps.healthcare.db.Patient"
+      title="Patient"/>
+
+  </entity>
+
+</domain-models>

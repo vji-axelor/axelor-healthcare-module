@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_7.0.xsd">
+
+  <module name="healthcare" package="com.axelor.apps.healthcare.db"/>
+
+  <entity name="ReferralSchedule">
+
+    <string name="referralFrom" title="Referral From"/>
+
+    <boolean name="internalReference" title="Internal Reference"/>
+    <boolean name="externalReference" title="External Reference"/>
+
+    <string name="referralReason" title="Referral Reason"/>
+
+    <date name="referralDate" title="Referral Date"/>
+    <string name="priority" title="Priority"/>
+    <string name="insurance" title="Insurance"/>
+
+    <string name="referralNotes" title="Referral Notes" large="true"/>
+
+    <string name="diagnoses" title="Diagnoses" large="true"/>
+
+    <many-to-one name="patient" ref="com.axelor.apps.healthcare.db.Patient"
+      title="Patient"/>
+
+  </entity>
+
+</domain-models>

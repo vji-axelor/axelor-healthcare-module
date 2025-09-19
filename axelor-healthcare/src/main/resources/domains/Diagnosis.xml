@@ -5,19 +5,29 @@
 
   <module name="healthcare" package="com.axelor.apps.healthcare.db"/>
 
-  <entity name="PatientAppointment">
+  <entity name="Diagnosis">
 
-    <string name="reference" title="Reference" namecolumn="true"/>
-    <date name="appointmentDate" title="Appointment Date"/>
+    <string name="diagnosisType" title="Diagnosis Type"
+      selection="healthcare-patient-type-select" default="Veterinary"/>
+
+    <string name="diagnosisName" title="Name" namecolumn="true"/>
+    <string name="code" title="Code"/>
+    <date name="fromDate" title="From Date"/>
+    <date name="toDate" title="To Date"/>
+    <string name="diagnosisStatus" title="Diagnosis Status"
+      selection="healthcare-diagnosis-status-select"/>
 
     <string name="notes" title="Notes" large="true"/>
 
+
     <many-to-one ref="com.axelor.apps.healthcare.db.Patient" name="patient"
-      title="patient"/>
-    <!-- <many-to-one ref="com.axelor.apps.healthcare.db.VeterinaryPatient" name="veterinaryPatient"
-      title="veterinary Patient"/> -->
+      title="Patient"/>
+
     <many-to-one ref="com.axelor.apps.healthcare.db.HealthcarePractitioner"
       name="healthcarePractitioner" title="Healthcare Practitioner"/>
+
+    <many-to-one name="companyAssign" ref="com.axelor.apps.base.db.Company"
+      title="Associated to"/>
 
   </entity>
 

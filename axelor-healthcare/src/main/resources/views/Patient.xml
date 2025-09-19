@@ -152,6 +152,35 @@
       </panel>
     </panel-tabs>
 
+    <panel-tabs>
+      <panel title="Diagnosis" colSpan="12">
+        <panel-related field="patientDiagnosis" form-view="patient-diagnosis-form"
+          grid-view="patient-diagnosis-grid" colSpan="12"/>
+      </panel>
+
+      <panel title="Allergie" colSpan="12">
+        <panel-related field="patientAllergie" form-view="patient-allergie-form"
+          grid-view="patient-allergie-grid" colSpan="12"/>
+      </panel>
+
+      <panel title="Injection" colSpan="12">
+        <panel-related field="injectionOrder" form-view="patient-injection-order-form"
+          grid-view="patient-injection-order-grid" colSpan="12"/>
+      </panel>
+
+      <panel title="Lab Record" colSpan="12">
+        <panel-related field="labRecord" form-view="patient-lab-record-form"
+          grid-view="patient-lab-record-grid" colSpan="12"/>
+      </panel>
+
+      <panel title="Referral Schedule" colSpan="12">
+        <panel-related field="referralSchedule"
+          form-view="patient-referral-schedule-form" grid-view="patient-referral-schedule-grid"
+          colSpan="12"/>
+      </panel>
+
+    </panel-tabs>
+
     <panel sidebar="true">
       <field name="healthcarePractitioner"/>
       <field name="userAssignTo" title="Assign User"/>

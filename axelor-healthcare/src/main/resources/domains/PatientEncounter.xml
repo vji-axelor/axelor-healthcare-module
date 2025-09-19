@@ -54,6 +54,12 @@
     <many-to-one name="companyAssign" ref="com.axelor.apps.base.db.Company"
       title="Associated to"/>
 
+    <one-to-many ref="com.axelor.apps.healthcare.db.Medication" name="medication"
+      title="Medication" mappedBy="patientEncounter"/>
+
+    <one-to-many ref="com.axelor.apps.healthcare.db.VitalSigns" name="vitalSigns"
+      title="Vital Signs" mappedBy="patientEncounter"/>
+
   </entity>
 
 </domain-models>

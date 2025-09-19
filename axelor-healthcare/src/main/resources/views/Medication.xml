@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_7.0.xsd">
+
+  <grid name="patient-medication-grid" title="Medication"
+    model="com.axelor.apps.healthcare.db.Medication">
+    <field name="medicationType"/>
+    <field name="drugName"/>
+    <field name="directions"/>
+    <field name="dispenseQty"/>
+    <field name="dayOfSupply"/>
+    <field name="refills"/>
+    <field name="fromDate"/>
+    <field name="toDate"/>
+    <field name="statusNote"/>
+
+  </grid>
+
+  <form name="patient-medication-form" title="Medication"
+    model="com.axelor.apps.healthcare.db.Medication" width="large">
+    <panel name="mainPanel">
+      <field name="medicationType"/>
+      <field name="drugName"/>
+
+      <field name="dispenseQty" colSpan="4"/>
+      <field name="dayOfSupply" colSpan="4"/>
+      <field name="refills" colSpan="4"/>
+      <field name="fromDate"/>
+      <field name="toDate"/>
+    </panel>
+    <panel>
+      <field name="directions"/>
+      <field name="statusNote"/>
+    </panel>
+
+  </form>
+</object-views>
